@@ -29,10 +29,10 @@ def requset_google(py_list, tones_list):
     flag = 1
     while flag != 0 and flag <= 10:
         try:
-        #     response = requests.post(
-        #        url='https://inputtools.google.com/request', data=data_dict, proxies=proxies)
             response = requests.post(
-                url='https://inputtools.google.com/request', data=data_dict)
+               url='https://inputtools.google.com/request', data=data_dict, proxies=proxies)
+            # response = requests.post(
+            #     url='https://inputtools.google.com/request', data=data_dict)
             candidates = response.json()[1][0][1]
             result = candidates[0]
             result_pinyin = pinyin(result, style=Style.TONE3)

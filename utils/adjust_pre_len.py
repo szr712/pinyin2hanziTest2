@@ -40,10 +40,10 @@ def adjust_pre_len(pre_pinyin, text_pinyin, pre_result):
                             'ie': "utf-8",
                             'oe': "utf-8' -H 'content-length:0'",
                         }
-                        response = requests.post(
-                            url='https://inputtools.google.com/request', data=data_dict, proxies=proxies)
                         # response = requests.post(
-                        #     url='https://inputtools.google.com/request', data=data_dict)
+                        #     url='https://inputtools.google.com/request', data=data_dict, proxies=proxies)
+                        response = requests.post(
+                            url='https://inputtools.google.com/request', data=data_dict)
                         candidates = response.json()[1][0][1]
                         for candidate in candidates:
                             if len(candidate) == 1:
